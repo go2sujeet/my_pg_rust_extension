@@ -8,7 +8,7 @@ fn hello_my_extension() -> &'static str {
 }
 // create an extension which will welcome given a name
 #[pg_extern]
-fn welcome(name: &str) -> String {
+fn welcome_extension(name: &str) -> String {
     format!("Welcome, {}", name)
 }
 

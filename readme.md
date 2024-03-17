@@ -6,3 +6,5 @@ my_extension=# SELECT hello_my_extension();
 ---------------------
  Hello, my_extension
 (1 row) -->
+'
+SELECT welcome('rock');
