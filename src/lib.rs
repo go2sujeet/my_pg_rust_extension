@@ -6,6 +6,11 @@ pgrx::pg_module_magic!();
 fn hello_my_extension() -> &'static str {
     "Hello, my_extension"
 }
+// create an extension which will welcome given a name
+#[pg_extern]
+fn welcome(name: &str) -> String {
+    format!("Welcome, {}", name)
+}
 
 #[cfg(any(test, feature = "pg_test"))]
 #[pg_schema]
@@ -15,6 +20,11 @@ mod tests {
     #[pg_test]
     fn test_hello_my_extension() {
         assert_eq!("Hello, my_extension", crate::hello_my_extension());
+    }
+
+    #[pg_test]
+    fn test_welcome() {
+        assert_eq!("Welcome, John", crate::welcome("John"));
     }
 
 }
