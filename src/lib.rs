@@ -12,6 +12,12 @@ fn welcome_extension(name: &str) -> String {
     format!("Welcome, {}", name)
 }
 
+// crate to just say welcome
+#[pg_extern]
+fn welcome() -> String {
+    "Welcome".to_string()
+}
+
 #[cfg(any(test, feature = "pg_test"))]
 #[pg_schema]
 mod tests {
