@@ -21,3 +21,4 @@ Creating a Postgres Extension with Rust, PGRX
     FROM public.mock_data AS m
     LIMIT 10;
     ```
+![alt text](image.png)
