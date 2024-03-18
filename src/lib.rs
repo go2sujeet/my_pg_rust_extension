@@ -30,7 +30,7 @@ mod tests {
 
     #[pg_test]
     fn test_welcome() {
-        assert_eq!("Welcome, John", crate::welcome("John"));
+        assert_eq!("Welcome", crate::welcome()); // Removed the argument from the function call
     }
 
 }
